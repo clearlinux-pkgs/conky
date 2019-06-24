@@ -4,8 +4,6 @@ libXft.so.2
 libc.so.6
 libcairo.so.2
 libcurl.so.4
-libdl.so.2
-libform.so.6
 libgcc_s.so.1
 liblua.so.5.3
 libm.so.6
