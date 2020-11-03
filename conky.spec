@@ -4,10 +4,10 @@
 #
 Name     : conky
 Version  : 1.11.5
-Release  : 4
+Release  : 5
 URL      : https://github.com/brndnmtthws/conky/archive/v1.11.5.tar.gz
 Source0  : https://github.com/brndnmtthws/conky/archive/v1.11.5.tar.gz
-Summary  : Lightweight system monitor for X
+Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause GPL-3.0 MIT
 Requires: conky-bin = %{version}-%{release}
@@ -31,17 +31,8 @@ BuildRequires : pkgconfig(libpulse)
 BuildRequires : pkgconfig(librsvg-2.0)
 
 %description
-DA DOCS. YO.
-============
-The main file that contains the bulk of our documentation is docs.xml .
-We use the DocBook format, which is a really kickass xml-based way of
-writing documentation, heavily oriented towards programming and computer
-stuff. There are tags like <command> and <option> that marks up your
-content without actually having to mark it up, which is why something
-that's of the <command> shows up in some cool style regardless of
-whether it's in a man page or a web page. DocBook has been around for
-10 years, and there's TONS of resources online about the different
-tags and the stuff that can be done.
+Vim filetype detection and syntax highlighting scripts for conky.
+Individual users can place them your personal .vim directory:
 
 %package bin
 Summary: bin components for the conky package.
@@ -89,31 +80,32 @@ license components for the conky package.
 
 %prep
 %setup -q -n conky-1.11.5
+cd %{_builddir}/conky-1.11.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1566315750
+export SOURCE_DATE_EPOCH=1604362202
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$CFLAGS -fno-lto "
-export FFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 %cmake .. -DBUILD_PORT_MONITORS=OFF -DBUILD_LUA_CAIRO=ON
-make  %{?_smp_mflags} VERBOSE=1
+make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1566315750
+export SOURCE_DATE_EPOCH=1604362202
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/conky
-cp 3rdparty/toluapp/COPYRIGHT %{buildroot}/usr/share/package-licenses/conky/3rdparty_toluapp_COPYRIGHT
-cp LICENSE %{buildroot}/usr/share/package-licenses/conky/LICENSE
-cp LICENSE.BSD %{buildroot}/usr/share/package-licenses/conky/LICENSE.BSD
+cp %{_builddir}/conky-1.11.5/3rdparty/toluapp/COPYRIGHT %{buildroot}/usr/share/package-licenses/conky/9dcaf12014ad45c0f3a231eeda56550b1a4f094e
+cp %{_builddir}/conky-1.11.5/LICENSE %{buildroot}/usr/share/package-licenses/conky/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/conky-1.11.5/LICENSE.BSD %{buildroot}/usr/share/package-licenses/conky/9319ffaf402018e2328897a9ab935ea4ef09171f
 pushd clr-build
 %make_install
 popd
@@ -142,6 +134,6 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/conky/3rdparty_toluapp_COPYRIGHT
-/usr/share/package-licenses/conky/LICENSE
-/usr/share/package-licenses/conky/LICENSE.BSD
+/usr/share/package-licenses/conky/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+/usr/share/package-licenses/conky/9319ffaf402018e2328897a9ab935ea4ef09171f
+/usr/share/package-licenses/conky/9dcaf12014ad45c0f3a231eeda56550b1a4f094e
