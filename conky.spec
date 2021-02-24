@@ -4,7 +4,7 @@
 #
 Name     : conky
 Version  : 1.11.5
-Release  : 5
+Release  : 6
 URL      : https://github.com/brndnmtthws/conky/archive/v1.11.5.tar.gz
 Source0  : https://github.com/brndnmtthws/conky/archive/v1.11.5.tar.gz
 Summary  : No detailed summary available
@@ -18,7 +18,7 @@ BuildRequires : buildreq-cmake
 BuildRequires : buildreq-scons
 BuildRequires : glibc-dev
 BuildRequires : imlib2-dev
-BuildRequires : libX11-dev libICE-dev libSM-dev libXau-dev libXcomposite-dev libXcursor-dev libXdamage-dev libXdmcp-dev libXext-dev libXfixes-dev libXft-dev libXi-dev libXinerama-dev libXi-dev libXmu-dev libXpm-dev libXrandr-dev libXrender-dev libXres-dev libXScrnSaver-dev libXt-dev libXtst-dev libXv-dev libXxf86misc-dev libXxf86vm-dev
+BuildRequires : libX11-dev libICE-dev libSM-dev libXau-dev libXcomposite-dev libXcursor-dev libXdamage-dev libXdmcp-dev libXext-dev libXfixes-dev libXft-dev libXi-dev libXinerama-dev libXi-dev libXmu-dev libXpm-dev libXrandr-dev libXrender-dev libXres-dev libXScrnSaver-dev libXt-dev libXtst-dev libXv-dev libXxf86vm-dev
 BuildRequires : lua-dev
 BuildRequires : ncurses-dev
 BuildRequires : pkgconfig(cairo)
