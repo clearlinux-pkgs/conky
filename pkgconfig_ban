@@ -3,3 +3,4 @@
 audacious
 audclient
 xmms2-client
+epoll-shim
