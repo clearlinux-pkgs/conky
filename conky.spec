@@ -4,10 +4,10 @@
 # Using build pattern: cmake
 #
 Name     : conky
-Version  : 1.19.5
-Release  : 13
-URL      : https://github.com/brndnmtthws/conky/archive/v1.19.5/conky-1.19.5.tar.gz
-Source0  : https://github.com/brndnmtthws/conky/archive/v1.19.5/conky-1.19.5.tar.gz
+Version  : 1.19.6
+Release  : 14
+URL      : https://github.com/brndnmtthws/conky/archive/v1.19.6/conky-1.19.6.tar.gz
+Source0  : https://github.com/brndnmtthws/conky/archive/v1.19.6/conky-1.19.6.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT
@@ -88,15 +88,15 @@ license components for the conky package.
 
 
 %prep
-%setup -q -n conky-1.19.5
-cd %{_builddir}/conky-1.19.5
+%setup -q -n conky-1.19.6
+cd %{_builddir}/conky-1.19.6
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1697034261
+export SOURCE_DATE_EPOCH=1697466326
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -146,7 +146,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1697034261
+export SOURCE_DATE_EPOCH=1697466326
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/conky
 cp %{_builddir}/conky-%{version}/3rdparty/toluapp/COPYRIGHT %{buildroot}/usr/share/package-licenses/conky/9dcaf12014ad45c0f3a231eeda56550b1a4f094e || :
@@ -173,9 +173,9 @@ popd
 
 %files doc
 %defattr(0644,root,root,0755)
-/usr/share/doc/conky-1.19.5_pre/conky.conf
-/usr/share/doc/conky-1.19.5_pre/conky_no_x11.conf
-/usr/share/doc/conky-1.19.5_pre/convert.lua
+/usr/share/doc/conky-1.19.6_pre/conky.conf
+/usr/share/doc/conky-1.19.6_pre/conky_no_x11.conf
+/usr/share/doc/conky-1.19.6_pre/convert.lua
 
 %files lib
 %defattr(-,root,root,-)
