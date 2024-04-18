@@ -6,10 +6,10 @@
 # autospec commit: 5905be9
 #
 Name     : conky
-Version  : 1.20.0
-Release  : 18
-URL      : https://github.com/brndnmtthws/conky/archive/v1.20.0/conky-1.20.0.tar.gz
-Source0  : https://github.com/brndnmtthws/conky/archive/v1.20.0/conky-1.20.0.tar.gz
+Version  : 1.20.1
+Release  : 19
+URL      : https://github.com/brndnmtthws/conky/archive/v1.20.1/conky-1.20.1.tar.gz
+Source0  : https://github.com/brndnmtthws/conky/archive/v1.20.1/conky-1.20.1.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause MIT
@@ -91,15 +91,15 @@ license components for the conky package.
 
 
 %prep
-%setup -q -n conky-1.20.0
-cd %{_builddir}/conky-1.20.0
+%setup -q -n conky-1.20.1
+cd %{_builddir}/conky-1.20.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1713361929
+export SOURCE_DATE_EPOCH=1713450667
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -151,7 +151,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1713361929
+export SOURCE_DATE_EPOCH=1713450667
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/conky
 cp %{_builddir}/conky-%{version}/3rdparty/toluapp/COPYRIGHT %{buildroot}/usr/share/package-licenses/conky/9dcaf12014ad45c0f3a231eeda56550b1a4f094e || :
@@ -182,9 +182,9 @@ popd
 
 %files doc
 %defattr(0644,root,root,0755)
-/usr/share/doc/conky-1.20.0_pre/conky.conf
-/usr/share/doc/conky-1.20.0_pre/conky_no_x11.conf
-/usr/share/doc/conky-1.20.0_pre/convert.lua
+/usr/share/doc/conky-1.20.1_pre/conky.conf
+/usr/share/doc/conky-1.20.1_pre/conky_no_x11.conf
+/usr/share/doc/conky-1.20.1_pre/convert.lua
 
 %files lib
 %defattr(-,root,root,-)
