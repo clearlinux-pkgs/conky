@@ -6,10 +6,10 @@
 # autospec commit: 5905be9
 #
 Name     : conky
-Version  : 1.20.1
-Release  : 19
-URL      : https://github.com/brndnmtthws/conky/archive/v1.20.1/conky-1.20.1.tar.gz
-Source0  : https://github.com/brndnmtthws/conky/archive/v1.20.1/conky-1.20.1.tar.gz
+Version  : 1.20.2
+Release  : 20
+URL      : https://github.com/brndnmtthws/conky/archive/v1.20.2/conky-1.20.2.tar.gz
+Source0  : https://github.com/brndnmtthws/conky/archive/v1.20.2/conky-1.20.2.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause MIT
@@ -33,6 +33,7 @@ BuildRequires : pkgconfig(libcurl)
 BuildRequires : pkgconfig(libmicrohttpd)
 BuildRequires : pkgconfig(libpulse)
 BuildRequires : pkgconfig(librsvg-2.0)
+BuildRequires : pkgconfig(pango)
 BuildRequires : pkgconfig(pangocairo)
 BuildRequires : pkgconfig(pangofc)
 BuildRequires : pkgconfig(pangoft2)
@@ -91,15 +92,15 @@ license components for the conky package.
 
 
 %prep
-%setup -q -n conky-1.20.1
-cd %{_builddir}/conky-1.20.1
+%setup -q -n conky-1.20.2
+cd %{_builddir}/conky-1.20.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1713450667
+export SOURCE_DATE_EPOCH=1714056477
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -151,7 +152,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1713450667
+export SOURCE_DATE_EPOCH=1714056477
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/conky
 cp %{_builddir}/conky-%{version}/3rdparty/toluapp/COPYRIGHT %{buildroot}/usr/share/package-licenses/conky/9dcaf12014ad45c0f3a231eeda56550b1a4f094e || :
@@ -182,14 +183,16 @@ popd
 
 %files doc
 %defattr(0644,root,root,0755)
-/usr/share/doc/conky-1.20.1_pre/conky.conf
-/usr/share/doc/conky-1.20.1_pre/conky_no_x11.conf
-/usr/share/doc/conky-1.20.1_pre/convert.lua
+/usr/share/doc/conky-1.20.2_pre/conky.conf
+/usr/share/doc/conky-1.20.2_pre/conky_no_x11.conf
+/usr/share/doc/conky-1.20.2_pre/convert.lua
 
 %files lib
 %defattr(-,root,root,-)
 /V3/usr/lib64/conky/libcairo.so
+/V3/usr/lib64/conky/libcairo_xlib.so
 /usr/lib64/conky/libcairo.so
+/usr/lib64/conky/libcairo_xlib.so
 
 %files license
 %defattr(0644,root,root,0755)
