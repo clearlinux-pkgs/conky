@@ -7,7 +7,7 @@
 #
 Name     : conky
 Version  : 1.20.2
-Release  : 20
+Release  : 21
 URL      : https://github.com/brndnmtthws/conky/archive/v1.20.2/conky-1.20.2.tar.gz
 Source0  : https://github.com/brndnmtthws/conky/archive/v1.20.2/conky-1.20.2.tar.gz
 Summary  : No detailed summary available
